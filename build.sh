@@ -191,9 +191,9 @@ function compile(){
 		$MKBOOT/mkbootfs ramdisk-15 | gzip > ramdisk-15.gz
 		$MKBOOT/mkbootimg --kernel zImage-dtb --ramdisk ramdisk-15.gz --cmdline "$CMD" --base 0x00000000 --pagesize 2048 --ramdisk_offset 0x02000000 -o boot-15.img
 		
-		echo "  MKBOOT   ramdisk-20"
-		$MKBOOT/mkbootfs ramdisk-20 | gzip > ramdisk-20.gz
-		$MKBOOT/mkbootimg --kernel zImage-dtb --ramdisk ramdisk-20.gz --cmdline "$CMD" --base 0x00000000 --pagesize 2048 --ramdisk_offset 0x02000000 -o boot-20.img
+		#echo "  MKBOOT   ramdisk-20"
+		#$MKBOOT/mkbootfs ramdisk-20 | gzip > ramdisk-20.gz
+		#$MKBOOT/mkbootimg --kernel zImage-dtb --ramdisk ramdisk-20.gz --cmdline "$CMD" --base 0x00000000 --pagesize 2048 --ramdisk_offset 0x02000000 -o boot-20.img
 		
 		echo " "
 		echo "**************************************************************"
@@ -212,13 +212,13 @@ function compile(){
 		zip -9 -r negalite_kernel_HW kernel META-INF modules setup com.grarak.kerneladiutor-1 bootperf.zip
 		mv negalite_kernel_HW.zip $INITRAMFS/negalite_kernel_HW_$REVISION-1.5.zip
 		
-		rm kernel/boot.img
-		rm setup/su.img
+		#rm kernel/boot.img
+		#rm setup/su.img
 		
-		mv $INITRAMFS/boot-20.img kernel/boot.img
-		cp -f $INITRAMFS/su-20.img setup/su.img
-		zip -9 -r negalite_kernel_HW kernel META-INF modules setup com.grarak.kerneladiutor-1 bootperf.zip
-		mv negalite_kernel_HW.zip $INITRAMFS/negalite_kernel_HW_$REVISION-2.0.zip
+		#mv $INITRAMFS/boot-20.img kernel/boot.img
+		#cp -f $INITRAMFS/su-20.img setup/su.img
+		#zip -9 -r negalite_kernel_HW kernel META-INF modules setup com.grarak.kerneladiutor-1 bootperf.zip
+		#mv negalite_kernel_HW.zip $INITRAMFS/negalite_kernel_HW_$REVISION-2.0.zip
 	
 		echo " "
 		echo "**************************************************************"

@@ -225,7 +225,10 @@ service bugreport /system/bin/dumpstate -d -p -B \
     disabled
     oneshot
 
-service sensorhd /system/bin/shd
+
+#service sensorhd /system/bin/strace /system/bin/shd
+#service sensorhd /system/bin/logwrapper /system/bin/shd
+service sensorhd /system/bin/logwrapper /system/bin/strace /system/bin/shd
     class main
     socket shdctl stream 0666 root root
     socket shddata stream 0666 root root
